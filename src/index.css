@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --var-blue: 178 60% 48%;
+        --var-blue-hover: 178 75% 65%;
+        --var-yellow: 39 88% 58%;
+        --var-yellow-hover: 39 100% 69%;
+        --var-dark-navy: 202 32% 15%;
+        --var-semidark-navy: 199 35% 19%;
+        --var-silver: 198 23% 72%;
+        --var-silver-hover: 197 33% 89%;
+    }
+}
