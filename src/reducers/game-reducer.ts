@@ -7,6 +7,7 @@ export const initialState: GameState = {
   currentPlayer: 'X',
   winner: null,
   status: 'not_started',
+  modalProps: null,
   mode: 'solo',
   score: { xWins: 0, oWins: 0, ties: 0 },
   player1Mark: 'X',
