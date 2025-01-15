@@ -10,9 +10,16 @@ declare type Score = {
 
 declare type GameStatus = 'win' | 'tie' | 'in_progress' | 'not_started'
 
+declare type ModalProps = {
+  heading?: string
+  description: string | React.ReactNode
+  actions: React.ReactNode
+}
+
 declare type GameState = {
   board: BoardState
   currentPlayer: Player
+  modalProps: ModalProps | null
   mode: GameMode
   player1Mark: Player
   score: Score
@@ -23,12 +30,6 @@ declare type GameState = {
 declare type LabelConfig = {
   x: string
   o: string
-}
-
-declare type ModalProps = {
-  heading?: string
-  description: string | React.ReactNode
-  actions: React.ReactNode
 }
 
 type GameAction =

@@ -1,8 +1,9 @@
 import React from 'react'
-import { gameReducer, initialState } from '../reducers/game-reducer.ts'
+import { initialState } from '../reducers/game-reducer.ts'
 import { findBestMove } from '../utils/find-best-move.ts'
 import { getResetGameModalProps } from '../utils/game-restart-modal.tsx'
 import { getGameResultModalProps } from '../utils/game-result-modal.tsx'
+import { useStoredGameState } from '../hooks/use-stored-game-state.ts'
 
 type TicTacToeContextValue = GameState & {
   makeMove: (index: number) => void
@@ -14,7 +15,7 @@ export const TicTacToeContext =
   React.createContext<TicTacToeContextValue | null>(null)
 
 export function TicTacToeProvider({ children }: { children: React.ReactNode }) {
-  const [state, dispatch] = React.useReducer(gameReducer, initialState)
+  const [state, dispatch] = useStoredGameState(initialState)
   const [modalProps, setModalProps] = React.useState<ModalProps | null>(null)
 
   const makeMove = React.useCallback(
