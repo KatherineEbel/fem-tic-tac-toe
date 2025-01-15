@@ -6,7 +6,7 @@ export const getResetGameModalProps = (
   setModalProps: (props: ModalProps | null) => void
 ): ModalProps => ({
   description: (
-    <span className="text-4xl font-bold uppercase tracking-widest text-silver">
+    <span className="text-2xl font-bold uppercase tracking-widest text-silver sm:text-4xl">
       Restart game?
     </span>
   ),

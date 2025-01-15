@@ -27,7 +27,7 @@ export const getGameResultModalProps = (
       ) : null}
       <span
         className={cn(
-          'text-4xl font-bold tracking-widest',
+          'text-2xl font-bold tracking-widest sm:text-4xl',
           state.winner === 'X'
             ? 'text-blue'
             : state.winner === 'O'
