@@ -5,15 +5,13 @@ export default function Board() {
   const { board, makeMove } = useTicTacToe()
   return (
     <main className="grid grid-cols-3 grid-rows-3 gap-5">
-      {board.map((row, rowIdx) =>
-        row.map((square, colIdx) => (
-          <Square
-            key={`${rowIdx}-${colIdx}`}
-            player={square}
-            onClick={makeMove.bind(null, rowIdx, colIdx)}
-          />
-        ))
-      )}
+      {board.map((square, index) => (
+        <Square
+          key={index}
+          player={square}
+          onClick={makeMove.bind(null, index)}
+        />
+      ))}
     </main>
   )
 }

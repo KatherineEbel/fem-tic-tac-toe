@@ -1,5 +1,5 @@
 declare type Player = 'X' | 'O'
-declare type BoardState = (Player | null)[][]
+declare type BoardState = (Player | null)[]
 declare type GameMode = 'solo' | 'multiplayer'
 
 declare type Score = {
@@ -11,10 +11,13 @@ declare type Score = {
 declare type GameStatus = 'win' | 'tie' | 'in_progress' | 'not_started'
 
 declare type GameState = {
-  winner: Player | null
+  board: BoardState
+  currentPlayer: Player
   mode: GameMode
-  status: GameStatus
+  player1Mark: Player
   score: Score
+  status: GameStatus
+  winner: Player | null
 }
 
 declare type LabelConfig = {
@@ -27,3 +30,8 @@ declare type ModalProps = {
   description: string | React.ReactNode
   actions: React.ReactNode
 }
+
+type GameAction =
+  | { type: 'MAKE_MOVE'; index: number }
+  | { type: 'START_GAME'; player?: Player; mode?: GameMode }
+  | { type: 'RESET_GAME' }

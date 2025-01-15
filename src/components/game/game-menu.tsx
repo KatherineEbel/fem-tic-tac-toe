@@ -7,10 +7,7 @@ import { cn } from '../../utils.ts'
 import { Button } from '../ui/button.tsx'
 
 export default function GameMenu() {
-  const {
-    gameState: { status },
-    startGame,
-  } = useTicTacToe()
+  const {status, startGame} = useTicTacToe()
   const [player1, setPlayer1] = React.useState<Player>('X')
 
   if (status !== 'not_started') return null
@@ -25,7 +22,7 @@ export default function GameMenu() {
       </header>
       <main className="flex flex-col gap-6 rounded-2xl bg-semidark-navy py-6">
         <h2 className="text-center text-base font-bold uppercase text-silver">
-          Pick Player 1's Mark
+          Pick Player 1&apos;s Mark
         </h2>
         <div className="relative mx-8 grid grid-cols-2 rounded-xl bg-dark-navy px-8 py-6">
           <div

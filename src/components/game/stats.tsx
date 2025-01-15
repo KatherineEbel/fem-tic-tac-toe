@@ -20,12 +20,8 @@ const generateLabels = (
 }
 
 export default function Stats() {
-  const {
-    gameState: { mode, score },
-    player1Mark,
-  } = useTicTacToe()
+  const { mode, score, player1Mark } = useTicTacToe()
 
-  console.log(score)
   const labels = generateLabels(mode, player1Mark)
   return (
     <footer className="grid grid-cols-3 items-center gap-5">
